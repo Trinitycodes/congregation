@@ -10,10 +10,10 @@ if (file_exists(dirname(__FILE__) . '/wp-config-local.php')) {
   require '../vendor/autoload.php';
   Dotenv::load(__DIR__);
   error_reporting(E_ALL ^ E_DEPRECATED);
-  define('DB_NAME',          $_ENV['DB_NAME'] );
-  define('DB_USER',          $_ENV['DB_USER'] );
-  define('DB_PASSWORD',      $_ENV['DB_PASS'] );
-  define('DB_HOST',          $_ENV['DB_HOST'] );
+  define('DB_NAME',          get_env('DB_NAME') );
+  define('DB_USER',          get_env('DB_USER') );
+  define('DB_PASSWORD',      get_env('DB_PASS') );
+  define('DB_HOST',          get_env('DB_HOST') );
   define('DB_CHARSET',       'utf8');
   define('DB_COLLATE',       '');
   $table_prefix  = 'wp_';
