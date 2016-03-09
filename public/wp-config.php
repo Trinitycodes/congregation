@@ -7,6 +7,7 @@ if (file_exists(dirname(__FILE__) . '/wp-config-local.php')) {
   require_once(dirname(__FILE__) . '/wp-config-local.php');
 } else {
   // Don't show deprecations; useful under PHP 5.5
+  print_r( getenv('DB_HOST') );
   error_reporting(E_ALL ^ E_DEPRECATED);
   define('DB_NAME',          getenv('DB_NAME') );
   define('DB_USER',          getenv('DB_USER') );
