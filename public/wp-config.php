@@ -7,12 +7,11 @@ if (file_exists(dirname(__FILE__) . '/wp-config-local.php')) {
   require_once(dirname(__FILE__) . '/wp-config-local.php');
 } else {
   // Don't show deprecations; useful under PHP 5.5
-  print_r( getenv('DB_HOST') );
   error_reporting(E_ALL ^ E_DEPRECATED);
-  define('DB_NAME',          getenv('DB_NAME') );
-  define('DB_USER',          getenv('DB_USER') );
-  define('DB_PASSWORD',      getenv('DB_PASS') );
-  define('DB_HOST',          getenv('DB_HOST') );
+  define('DB_NAME',          $_ENV['DB_NAME'] );
+  define('DB_USER',          $_ENV['DB_USER'] );
+  define('DB_PASSWORD',      $_ENV['DB_PASS'] );
+  define('DB_HOST',          $_ENV['DB_HOST'] );
   define('DB_CHARSET',       'utf8');
   define('DB_COLLATE',       '');
   $table_prefix  = 'wp_';
