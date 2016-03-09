@@ -7,6 +7,8 @@ if (file_exists(dirname(__FILE__) . '/wp-config-local.php')) {
   require_once(dirname(__FILE__) . '/wp-config-local.php');
 } else {
   // Don't show deprecations; useful under PHP 5.5
+  require '../vendor/autoload.php';
+  Dotenv::load(__DIR__);
   error_reporting(E_ALL ^ E_DEPRECATED);
   define('DB_NAME',          $_ENV['DB_NAME'] );
   define('DB_USER',          $_ENV['DB_USER'] );
