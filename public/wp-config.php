@@ -32,17 +32,6 @@ define('NONCE_SALT',       'u;Xa0{E-=gw0`*ZV*M*i8!V5BD.%2^KX6Y*_#+}FDdrxw1Ea;-ZV
 
 $table_prefix = 'wp_';
 
-
-// Match any requests made via xip.io.
-if ( isset( $_SERVER['HTTP_HOST'] ) && preg_match('/^(local.wordpress.)\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(.xip.io)\z/', $_SERVER['HTTP_HOST'] ) ) {
-define( 'WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] );
-define( 'WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] );
-}
-
-define( 'WP_DEBUG', true );
-
-
-
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
